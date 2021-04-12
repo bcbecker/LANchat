@@ -6,7 +6,6 @@ import time
 # Global constant for easy changes
 FILE = "messages.db"
 PLAYLIST_TABLE = "Messages"
-USER_TABLE = "Users"
 
 
 class DataBase:
@@ -40,10 +39,6 @@ class DataBase:
         """
         query_mess = f"""CREATE TABLE IF NOT EXISTS {PLAYLIST_TABLE}
                     (name TEXT, content TEXT, time Date, id INTEGER PRIMARY KEY AUTOINCREMENT)"""
-        #The name here could be foriegn from a 1:M relaitonship with the PLAYLIST_TABLE. Password needs to not be TEXT
-        query_user = f"""CREATE TABLE IF NOT EXISTS {USER_TABLE}
-                    (name TEXT, email TEXT, password TEXT, userid INTEGER PRIMARY KEY AUTOINCREMENT)"""
-        
         self.cursor.execute(query_mess)
         self.conn.commit()
 
