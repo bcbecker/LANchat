@@ -4,12 +4,6 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<!--Fancy send button-->
-<style>
-    .form button:hover,.form button:active,.form button:focus {
-        background: #43A047;
-    }
-</style>
 <div class="row" style="padding-top:15px;" >
   <div class="col"></div>
   <div class="col-auto" style="color:rgb(252, 252, 252)"><p class="h3" align="center">Chat</p></div>
@@ -22,7 +16,7 @@
       <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Message" aria-label="Message" id="msg">
         <div class="input-group-append">
-          <button class="btn btn-success" type="submit" id="sendBtn">Send</button>
+          <button class="btn btn-success sticky-bottom" type="submit" id="sendBtn">Send</button>
         </div>
       </div>
   </form>
