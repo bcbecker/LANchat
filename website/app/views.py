@@ -8,7 +8,7 @@ view = Blueprint("views", __name__)
 
 # Global constants for easy changes
 NAME_KEY = 'name'
-MSG_LIMIT = 20
+MSG_LIMIT = 50
 
 # Views
 @view.route("/login", methods=["POST", "GET"])

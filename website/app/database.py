@@ -83,5 +83,6 @@ class DataBase:
         :return: None
         """
         query = f"INSERT INTO {PLAYLIST_TABLE} VALUES (?, ?, ?, ?)"
-        self.cursor.execute(query, (name, msg, datetime.now(), None))
-        self.conn.commit()
+        if msg != "":
+            self.cursor.execute(query, (name, msg, datetime.now(), None))
+            self.conn.commit()

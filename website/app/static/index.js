@@ -1,5 +1,6 @@
 /* Houses async functions to control JSON/chat, dynamic data */
 async function add_messages(msg, scroll) {
+  if (msg.message !== "") {
     if (typeof msg.name !== "undefined") {
       var date = dateNow();
   
@@ -34,6 +35,7 @@ async function add_messages(msg, scroll) {
       var messageDiv = document.getElementById("messages");
       messageDiv.innerHTML += content;
     }
+  }
   
     if (scroll) {
       scrollSmoothToBottom("messages");
