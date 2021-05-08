@@ -1,4 +1,3 @@
-"""Run this to set up the server/start the app"""
 from flask import session
 from flask_socketio import SocketIO
 import time
@@ -30,5 +29,4 @@ def handle_my_custom_event(json, methods=['GET', 'POST']):
 
 # MAIN
 if __name__ == "__main__": 
-    # starts the web server
     socketio.run(app, debug=True, host=str(config.Config.SERVER))

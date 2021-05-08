@@ -1,5 +1,5 @@
 # LANchat
-This web chat app was built using Flask, Jinja, an SQLite3 database, and SocketIO. It will run locally, and by changing the environment variables, could run on LAN as well. A virtual environment is included as a method of providing necessary library access, but the requirements.txt file can be executed just the same.
+This web chat app was built using Flask, an SQLite3 database, and SocketIO for realtime updates. LANchat uses Jinja2 templating and Bootstrap CSS on the front end, with asynchronous JavaScript to update the main messages div. It will run locally, and by changing the environment variables, could run on LAN as well.
 
 
 ## Setup
@@ -19,7 +19,7 @@ pipenv shell
 
 ## Creating .env file
 
-For this server to run, you must create a .env file, setting the following paramters:
+For this server to run, you must create a .env file within the package, setting the following paramters:
 ```bash
 TESTING=False
 DEBUG=True
@@ -31,8 +31,8 @@ Set the secret key to whatever you'd like! Server is set to 0.0.0.0 for localhos
 ## Running the Server
 
 ```bash
-cd website
-python main.py
+cd lanchat
+python run.py
 ```
 
 ## Viewing the website
