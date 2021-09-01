@@ -1,18 +1,17 @@
-<!--Extend template for the history display-->
 {% extends "base.html" %}
 
 {% block title %}Message History{% endblock %}
 
 {% block content %}
-<div class="row" style="padding-top:15px;" >
+<div class="row pt-2 pb-2" >
     <div class="col"></div>
     <div class="col-auto nav-header-color"><p class="h3" align="center" >Message History</p></div>
     <div class="col"></div>
 </div>
 <div class="message-container">
-    <div class="overflow-auto" class="msgs" id="messagesHistory" style="overflow-y: scroll; height:500px;">
+    <div id="messages" class="overflow-auto msgs" id="messagesHistory">
         {% for msg in history %}
-            <div class="container darker"><b style="color:#000" class="left">{{msg["name"]}}</b><p> {{msg["message"]}}</p><span class="time-left">{{msg["time"]}}</span></div>
+            <div class="container darker"><b class="left">{{msg["name"]}}</b><p> {{msg["message"]}}</p><span class="time-left">{{msg["time"]}}</span></div>
         {% endfor %}
     </div>
 </div>

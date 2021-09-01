@@ -1,21 +1,20 @@
-<!--Extend template for the chat window/home page-->
 {% extends "base.html" %}
 
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<div class="row" style="padding-top:15px;" >
+<div class="row pt-2 pb-2" >
   <div class="col"></div>
   <div class="col-auto nav-header-color"><p class="h3" align="center">Chat</p></div>
   <div class="col"></div>
 </div>
 <div class="message-container">
   <!--Where JS updates messages-->
-  <div id="messages" class="overflow-auto msgs" style="overflow-y: scroll; height:500px;">
+  <div id="messages" class="overflow-auto msgs">
   </div>
-  <form id="msgForm" action="" method="POST" style="bottom:0; margin: 0% 0% 0% 0%;">
+  <form id="msgForm" action="" method="POST">
       <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Message" aria-label="Message" id="msg">
+        <input type="text" class="form-control" placeholder=" Message" aria-label="Message" id="msg">
         <div class="input-group-append">
           <button class="btn btn-success sticky-bottom" type="submit" id="sendBtn">Send</button>
         </div>

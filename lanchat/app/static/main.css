@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 @import "compass/css3";
 
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+  
 /* Background image */
 .bg {
     position: absolute;
@@ -8,8 +16,9 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: #212931;
     background-size: cover;
+    background-color: #212931;
+    background-image: url('./images/bg.jpg')
 }
 
 .nav-header-color {
@@ -38,6 +47,7 @@
 
 /* Darker chat container */
 .darker {
+    color:#000;
     border: 2px solid #b6b6b6;
     background-color: #b6b6b6;
     box-shadow: 0 0 20px 0 rgba(43, 43, 43, 0.5), 0 5px 5px 0 rgba(20, 20, 20, 0.25);
@@ -100,7 +110,6 @@
 }
 
 .form input {
-    font-family: "Roboto", sans-serif;
     outline: 0;
     background: #e7e7e7;
     width: 100%;
@@ -132,4 +141,8 @@
     margin: 15px 0 0;
     color: #5a5858;
     font-size: 12px;
+}
+
+div #messages {
+    overflow-y: scroll; height:500px;
 }

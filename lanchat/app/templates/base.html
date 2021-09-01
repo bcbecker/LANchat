@@ -9,7 +9,7 @@
     <title>{% block title %}{% endblock %}</title>
   </head>
 <!--Main nav bar with href to other templates-->
-  <body class="bg bg-image" style="background-image: url('static/images/bg.jpg');">
+  <body class="bg">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <h1 class="navbar-brand" href="#">LANchat</h1>
       <button
@@ -34,7 +34,6 @@
     {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
       {% for category, message in messages %}
-      <!--Must match category in auth-->
       {% if category == 'error' %}
       <div class="alert alert-danger" role="alert">
         {{ message }}
