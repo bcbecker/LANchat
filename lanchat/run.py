@@ -5,7 +5,7 @@ from app import create_app
 from app.database import DataBase
 import config
 
-# Setup for flask app and socket event
+
 app = create_app()
 socketio = SocketIO(app)
 
