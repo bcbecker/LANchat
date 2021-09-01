@@ -3,7 +3,6 @@ from sqlite3 import Error
 from datetime import datetime
 import time
 
-# Global constant for easy changes
 FILE = "messages.db"
 PLAYLIST_TABLE = "Messages"
 
@@ -44,7 +43,7 @@ class DataBase:
 
     def get_all_messages(self, limit=100, name=None):
         """
-        Returns all messages
+        Returns all messages in sorted order by date
         :param limit: int
         :return: list[dict]
         """
@@ -57,7 +56,6 @@ class DataBase:
 
         result = self.cursor.fetchall()
 
-        # return messages in sorted order by date
         results = []
         for r in sorted(result, key=lambda x: x[3], reverse=True)[:limit]:
             name, content, date, _id = r

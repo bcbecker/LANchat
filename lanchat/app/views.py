@@ -1,4 +1,3 @@
-# Routes/blueprints, NEED TO ADD AUTh FOR PASSWORD HASHED DB
 from flask import Blueprint
 from flask import Flask, render_template, url_for, redirect, request, session, jsonify, flash, Blueprint
 from .database import DataBase
@@ -6,9 +5,8 @@ from .database import DataBase
 view = Blueprint("views", __name__)
 
 
-# Global constants for easy changes
 NAME_KEY = 'name'
-MSG_LIMIT = 50
+MSG_LIMIT = 100
 
 # Views
 @view.route("/login", methods=["POST", "GET"])
@@ -18,7 +16,7 @@ def login():
     :exception POST
     :return: None
     """
-    if request.method == "POST":  # if user input a name
+    if request.method == "POST":
         name = request.form["inputName"]
         if len(name) >= 2:
             session[NAME_KEY] = name
