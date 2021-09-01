@@ -31,7 +31,6 @@ Set the secret key to whatever you'd like! Server is set to 0.0.0.0 for localhos
 ## Running the Server
 
 ```bash
-cd lanchat
 python run.py
 ```
 
