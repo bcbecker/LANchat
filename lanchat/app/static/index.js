@@ -163,7 +163,7 @@ async function add_messages(msg, scroll) {
     }
   };
   
-  // fade out flask messages
+  // time out flask messages
   window.setTimeout(function() {
-    $(".alert").fadeTo(500, 0) 
-}, 7000);
+    $(".alert").remove();
+  }, 5000); 

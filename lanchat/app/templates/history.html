@@ -9,7 +9,7 @@
     <div class="col"></div>
 </div>
 <div class="message-container">
-    <div id="messages" class="overflow-auto msgs" id="messagesHistory">
+    <div id="messagesHistory" class="overflow-auto msgs">
         {% for msg in history %}
             <div class="container darker"><b class="left">{{msg["name"]}}</b><p> {{msg["message"]}}</p><span class="time-left">{{msg["time"]}}</span></div>
         {% endfor %}
