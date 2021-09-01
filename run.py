@@ -1,9 +1,9 @@
 from flask import session
 from flask_socketio import SocketIO
 import time
-from app import create_app
-from app.database import DataBase
-import config
+from lanchat import create_app
+from lanchat.config import Config
+from lanchat.database import DataBase
 
 
 app = create_app()
@@ -30,4 +30,4 @@ def handle_my_custom_event(json, methods=['GET', 'POST']):
 
 
 if __name__ == "__main__": 
-    socketio.run(app, debug=True, host=str(config.Config.SERVER))
+    socketio.run(app, debug=True, host=str(Config.SERVER))
