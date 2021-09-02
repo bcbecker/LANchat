@@ -1,6 +1,4 @@
-from flask import session
 from flask_socketio import SocketIO
-import time
 from lanchat import create_app
 from lanchat.config import Config
 from lanchat.database import DataBase

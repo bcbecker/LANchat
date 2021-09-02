@@ -26,7 +26,7 @@ class DataBase:
 
     def close(self):
         """
-        close the databse connection
+        close the database connection
         :return: None
         """
         self.conn.close()

@@ -11,7 +11,6 @@ def create_app():
     with app.app_context():
         # Imports
         from .views import view
-        from .database import DataBase
 
         # Routes
         app.register_blueprint(view, url_prefix="/")
