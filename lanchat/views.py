@@ -17,7 +17,7 @@ def login():
     :return: None
     """
     if request.method == "POST":
-        name = request.form["inputName"]
+        name = request.form["name"]
         if len(name) >= 2:
             session[NAME_KEY] = name
             flash(' You were successfully logged in as ' + name, category='success')
