@@ -9,6 +9,7 @@ python-dotenv = "*"
 Flask = "*"
 Flask-SocketIO = "*"
 pytest = "*"
+itsdangerous = "*"
 
 [dev-packages]
 
