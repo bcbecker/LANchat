@@ -1,5 +1,4 @@
-from flask import Blueprint
-from flask import render_template, url_for, redirect, request, session, jsonify, flash, Blueprint
+from flask import Blueprint, render_template, url_for, redirect, request, session, jsonify, flash, escape
 from .database import DataBase
 
 main = Blueprint("main", __name__)
@@ -17,7 +16,7 @@ def login():
     :return: None
     """
     if request.method == "POST":
-        name = request.form["name"]
+        name = escape(request.form["name"])
         if len(name) >= 2:
             session[NAME_KEY] = name
             flash(' You were successfully logged in as ' + name, category='success')

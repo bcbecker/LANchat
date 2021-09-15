@@ -1,3 +1,4 @@
+from flask import escape
 from flask_socketio import SocketIO
 from lanchat import create_app
 from lanchat.config import Config
@@ -20,7 +21,7 @@ def handle_my_custom_event(json, methods=['GET', 'POST']):
     data = dict(json)
     if "name" in data:
         db = DataBase()
-        db.save_message(data["name"], data["message"])
+        db.save_message(escape(data["name"]), escape(data["message"]))
 
     socketio.emit('message response', json)
 

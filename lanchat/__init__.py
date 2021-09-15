@@ -10,9 +10,9 @@ def create_app():
     
     with app.app_context():
         # Imports
-        from .views import view
+        from .routes import main
 
         # Routes
-        app.register_blueprint(view, url_prefix="/")
+        app.register_blueprint(main, url_prefix="/")
 
         return app
