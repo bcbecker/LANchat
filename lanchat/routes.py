@@ -1,15 +1,15 @@
 from flask import Blueprint
-from flask import Flask, render_template, url_for, redirect, request, session, jsonify, flash, Blueprint
+from flask import render_template, url_for, redirect, request, session, jsonify, flash, Blueprint
 from .database import DataBase
 
-view = Blueprint("views", __name__)
+main = Blueprint("main", __name__)
 
 
 NAME_KEY = 'name'
 MSG_LIMIT = 100
 
-# Views
-@view.route("/login", methods=["POST", "GET"])
+# routes
+@main.route("/login", methods=["POST", "GET"])
 def login():
     """
     displays main login page and handles saving name in session
@@ -21,14 +21,14 @@ def login():
         if len(name) >= 2:
             session[NAME_KEY] = name
             flash(' You were successfully logged in as ' + name, category='success')
-            return redirect(url_for("views.home"))
+            return redirect(url_for("main.home"))
         else:
             flash(' Name must be longer than 1 character', category='error')
 
     return render_template("login.html", **{"session": session})
 
 
-@view.route("/logout")
+@main.route("/logout")
 def logout():
     """
     logs the user out by popping name from session
@@ -36,11 +36,11 @@ def logout():
     """
     session.pop(NAME_KEY, None)
     flash(' You were logged out', category='success')
-    return redirect(url_for("views.login"))
+    return redirect(url_for("main.login"))
 
 
-@view.route("/")
-@view.route("/home")
+@main.route("/")
+@main.route("/home")
 def home():
     """
     displays home page if logged in
@@ -48,23 +48,23 @@ def home():
     """
     if NAME_KEY not in session:
         flash(' Please login before chatting', category='error')
-        return redirect(url_for("views.login"))
+        return redirect(url_for("main.login"))
 
     return render_template("index.html", **{"session": session})
 
 
-@view.route("/history")
+@main.route("/history")
 def history():
     if NAME_KEY not in session:
         flash(' Please login before viewing message history', category='error')
-        return redirect(url_for("views.login"))
+        return redirect(url_for("main.login"))
 
     json_messages = get_history(session[NAME_KEY])
     print(json_messages)
     return render_template("history.html", **{"history": json_messages})
 
 
-@view.route("/get_name")
+@main.route("/get_name")
 def get_name():
     """
     :return: a json object storing name of logged in user
@@ -75,7 +75,7 @@ def get_name():
     return jsonify(data)
 
 
-@view.route("/get_messages")
+@main.route("/get_messages")
 def get_messages():
     """
     :return: all messages stored in database
@@ -87,7 +87,7 @@ def get_messages():
     return jsonify(messages)
 
 
-@view.route("/get_history")
+@main.route("/get_history")
 def get_history(name):
     """
     :param name: str

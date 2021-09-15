@@ -79,4 +79,4 @@ Improvements:
 - End to end encryption
 
 To Do:
-- Rate limit and data transfer limit on server 
+- Data transfer limit, sanitize inputs
