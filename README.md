@@ -15,7 +15,7 @@ This project is not currently live.
 ## General Information
 LANchat is a straightforward and self-contained chat server, designed to be downloaded by the end user and configured on their own device. While this may sound daunting for some, the purpose of doing so is to not rely on any outside resources, which keeps the footprint and maintenance to a minimum, while still giving you the benefit of a private chat server. Users can message back and forth in real-time, and since it's only on your local network, there's no need to worry about unwanted visitors to your chatroom (that is, if your network is properly secured).
 
-The overall goal for this project was to build something small and usable, while learning a new skill. I like projects that require me to learn as I go, and the skills I acquire throughout help me to expand my horizon as a developer. I had not written much JavaScript before diving into this project, and afterword, I feel much more confident in using asynchronous JavaScript and jQuery. I took a more 'JavaScript-centric' approach to the functions I would normally handle in other ways. For example, instead of using user authentication to hide/show the accessible routes, I used JS to fetch users in the session. Though this is not the right way to do it, it taught me about DOM manipulation.
+The overall goal for this project was to build something small and usable, while learning a new skill. I like projects that require me to learn as I go, and the skills I acquire throughout help me to expand my horizon as a developer. I had not written much JavaScript before diving into this project, and afterword, I feel much more confident in using asynchronous JavaScript and jQuery. I took a more 'JavaScript-centric' (client-side rendering) approach to the functions I would normally handle server-side. This was done to become more comfortable with client-side rendering, fetching data from a backend API rather than relying on server-side rendering to reload pages.
 
 
 ## Technologies Used
@@ -75,9 +75,8 @@ To clear the message history, simply delete the `messages.db` file.
 Improvements:
 - Upgrade the testing suite, maybe using Selenium for functional testing
 - Create a web-facing version that has numerous chatrooms
-    - Elasticsearch, Oauth, Cloud DB
+    - Oauth, Cloud DB
 - End to end encryption
 
 To Do:
 - Data transfer limit
-- Make sure input sanitizing is working
